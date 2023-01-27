@@ -1,5 +1,5 @@
 <template>
-    <view class="index">
+    <view class="text-white" style="background-color: red">
         <Counter />
     </view>
 </template>

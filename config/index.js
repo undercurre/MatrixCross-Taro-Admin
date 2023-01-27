@@ -1,3 +1,5 @@
+import UnoCSS from 'unocss/webpack';
+
 const config = {
     projectName: 'MatrixCross-Taro-Admin',
     date: '2023-1-27',
@@ -22,6 +24,7 @@ const config = {
     },
     mini: {
         webpackChain(chain) {
+            chain.plugin('unocss').use(UnoCSS());
             chain.merge({
                 module: {
                     rule: {
@@ -77,7 +80,7 @@ const config = {
     },
 };
 
-module.exports = function (merge) {
+module.exports = (merge) => {
     if (process.env.NODE_ENV === 'development') {
         return merge({}, config, require('./dev'));
     }
