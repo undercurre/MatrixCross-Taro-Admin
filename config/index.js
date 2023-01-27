@@ -1,4 +1,7 @@
 import UnoCSS from 'unocss/webpack';
+import TaroResolver from './module/TaroResolver';
+const AutoImport = require('unplugin-auto-import/webpack');
+const Components = require('unplugin-vue-components/webpack');
 
 const config = {
     projectName: 'MatrixCross-Taro-Admin',
@@ -24,6 +27,45 @@ const config = {
     },
     mini: {
         webpackChain(chain) {
+            // 添加自动引入
+            // https://github.com/antfu/unplugin-auto-import
+            chain.plugin('unplugin-auto-import').use(
+                AutoImport({
+                    imports: [
+                        'vue',
+                        // 注意: 针对可能出现的 `$` 和 `$$`，手动排除
+                        // https://vuejs.org/guide/extras/reactivity-transform.html#refs-vs-reactive-variables
+                        {
+                            'vue/macros': [
+                                '$ref',
+                                '$shallowRef',
+                                '$toRef',
+                                '$customRef',
+                                '$computed',
+                            ],
+                        },
+                        TaroResolver(),
+                    ],
+                    dts: 'src/auto-imports.d.ts',
+                    dirs: ['src/composables', 'src/store'],
+                    vueTemplate: true,
+                    eslintrc: {
+                        enabled: true,
+                        filepath: 'src/.eslintrc-auto-import.json',
+                        globalsPropValue: true,
+                    },
+                }),
+            );
+
+            // 添加组件按需引入, 自动引入 `src/components` 目录下的组件
+            // https://github.com/antfu/unplugin-vue-components
+            chain.plugin('unplugin-vue-components').use(
+                Components({
+                    dts: 'src/components.d.ts',
+                    dirs: ['src/components'],
+                    resolvers: [],
+                }),
+            );
             chain.plugin('unocss').use(UnoCSS());
             chain.merge({
                 module: {

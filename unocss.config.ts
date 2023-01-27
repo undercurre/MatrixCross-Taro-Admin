@@ -1,3 +1,13 @@
+import {
+    defineConfig,
+    presetAttributify,
+    presetIcons,
+    presetTypography,
+    presetUno,
+    transformerDirectives,
+    transformerVariantGroup,
+} from 'unocss';
+import { FileSystemIconLoader } from '@iconify/utils/lib/loader/node-loaders';
 import presetWeapp from 'unocss-preset-weapp';
 import {
     transformerAttributify,
@@ -24,6 +34,27 @@ export default {
             // webpack4 webpack5
             taroWebpack: 'webpack5',
         }),
+
+        presetUno(),
+        presetAttributify(),
+        presetIcons({
+            collections: {
+                carbon: () =>
+                    import('@iconify-json/carbon/icons.json').then(
+                        (i) => i.default,
+                    ),
+                mdi: () =>
+                    import('@iconify-json/mdi/icons.json').then(
+                        (i) => i.default,
+                    ),
+                my: FileSystemIconLoader('./src/icons', (svg) =>
+                    svg.replace(/#fff/, 'currentColor'),
+                ),
+            },
+            scale: 1.2,
+            warn: true,
+        }),
+        presetTypography(),
     ],
     shortcuts: {
         'wh-full': 'w-full h-full',
