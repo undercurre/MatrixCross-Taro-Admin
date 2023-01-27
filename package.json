@@ -42,6 +42,7 @@
     "license": "MIT",
     "dependencies": {
         "@babel/runtime": "^7.7.7",
+        "@nutui/nutui-taro": "3",
         "@tarojs/components": "3.5.12",
         "@tarojs/helper": "3.5.12",
         "@tarojs/plugin-framework-vue3": "3.5.12",
@@ -74,6 +75,7 @@
         "@vue/babel-plugin-jsx": "^1.0.6",
         "@vue/compiler-sfc": "^3.0.0",
         "babel-loader": "8.1.0",
+        "babel-plugin-import": "^1.13.6",
         "babel-preset-taro": "3.5.12",
         "commitizen": "^4.3.0",
         "commitlint": "^17.4.2",

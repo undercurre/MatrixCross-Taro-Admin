@@ -1,11 +1,4 @@
-import {
-    presetAttributify,
-    presetIcons,
-    presetTypography,
-    presetUno,
-    transformerDirectives,
-    transformerVariantGroup,
-} from 'unocss';
+import { presetIcons } from 'unocss';
 import { FileSystemIconLoader } from '@iconify/utils/lib/loader/node-loaders';
 import presetWeapp from 'unocss-preset-weapp';
 import {
@@ -33,9 +26,6 @@ export default {
             // webpack4 webpack5
             taroWebpack: 'webpack5',
         }),
-
-        presetUno(),
-        presetAttributify(),
         presetIcons({
             collections: {
                 carbon: () =>
@@ -53,7 +43,7 @@ export default {
             scale: 1.2,
             warn: true,
         }),
-        presetTypography(),
+        // presetTypography(),
     ],
     shortcuts: {
         'wh-full': 'w-full h-full',
@@ -100,7 +90,5 @@ export default {
         transformerAttributify(),
         // options https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerClass
         transformerClass(),
-        transformerDirectives(),
-        transformerVariantGroup(),
     ],
 };

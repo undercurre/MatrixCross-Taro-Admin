@@ -19,6 +19,9 @@ const config = {
         patterns: [],
         options: {},
     },
+    sass: {
+        data: `@import "@nutui/nutui-taro/dist/styles/variables.scss";`,
+    },
     framework: 'vue3',
     compiler: 'webpack5',
     cache: {
@@ -68,6 +71,8 @@ const config = {
                 Components({
                     dts: 'src/components.d.ts',
                     dirs: ['src/components'],
+                    extensions: ['vue'], //  // 组件的有效文件扩展名
+                    include: [/\.vue$/, /\.vue\?vue/], // 扫描范围
                     resolvers: [],
                 }),
             );

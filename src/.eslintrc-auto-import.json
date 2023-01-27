@@ -50,6 +50,7 @@
     "triggerRef": true,
     "unref": true,
     "useAttrs": true,
+    "useCounterStore": true,
     "useCssModule": true,
     "useCssVars": true,
     "useSlots": true,
