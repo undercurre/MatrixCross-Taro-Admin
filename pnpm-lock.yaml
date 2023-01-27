@@ -60,6 +60,7 @@ specifiers:
   stylelint-config-standard-vue: ^1.0.0
   stylelint-order: ^6.0.1
   stylelint-scss: ^4.3.0
+  taro-axios: ^1.1.1
   typescript: ^4.1.0
   unocss: 0.45.29
   unocss-preset-weapp: 0.1.18
@@ -87,6 +88,7 @@ dependencies:
   '@tarojs/taro': registry.npmmirror.com/@tarojs/taro/3.5.12_vue@3.2.45
   '@tarojs/taro-h5': registry.npmmirror.com/@tarojs/taro-h5/3.5.12_vue@3.2.45
   pinia: registry.npmmirror.com/pinia/2.0.29_prq2uz4lho2pwp6irk4cfkrxwu
+  taro-axios: registry.npmmirror.com/taro-axios/1.1.1_@tarojs+taro@3.5.12
   vue: registry.npmmirror.com/vue/3.2.45
 
 devDependencies:
@@ -4816,6 +4818,15 @@ packages:
     version: 1.12.0
     dev: true
 
+  registry.npmmirror.com/axios/0.19.2:
+    resolution: {integrity: sha512-fjgm5MvRHLhx+osE2xoekY70AhARk3a6hkN+3Io1jc00jtquGvxYlKlsFUhmUET0V5te6CcZI7lcv2Ym61mjHA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/axios/-/axios-0.19.2.tgz}
+    name: axios
+    version: 0.19.2
+    deprecated: Critical security vulnerability fixed in v0.21.1. For more information, see https://github.com/axios/axios/pull/3410
+    dependencies:
+      follow-redirects: registry.npmmirror.com/follow-redirects/1.5.10
+    dev: false
+
   registry.npmmirror.com/babel-code-frame/6.26.0:
     resolution: {integrity: sha512-XqYMR2dfdGMW+hd0IUZ2PwK+fGeFkOxZJ0wY+JaQAHzt1Zx8LcvpiZD2NiGkEG8qx0CfkAOr5xt76d1e8vG90g==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/babel-code-frame/-/babel-code-frame-6.26.0.tgz}
     name: babel-code-frame
@@ -7393,7 +7404,6 @@ packages:
     version: 3.1.0
     dependencies:
       ms: registry.npmmirror.com/ms/2.0.0
-    dev: true
 
   registry.npmmirror.com/debug/3.2.7:
     resolution: {integrity: sha512-CFjzYYAi4ThfiQvizrFQevTTXHtnCqWfe7x1AhgEscTz6ZbLbfoLRLPugTQyBth6f8ZERVUSyWHFD/7Wu4t1XQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/debug/-/debug-3.2.7.tgz}
@@ -9663,6 +9673,15 @@ packages:
       debug:
         optional: true
     dev: true
+
+  registry.npmmirror.com/follow-redirects/1.5.10:
+    resolution: {integrity: sha512-0V5l4Cizzvqt5D44aTXbFZz+FtyXV1vrDN6qrelxtfYQKW0KO0W2T/hkE8xvGa/540LkZlkaUjO4ailYTFtHVQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/follow-redirects/-/follow-redirects-1.5.10.tgz}
+    name: follow-redirects
+    version: 1.5.10
+    engines: {node: '>=4.0'}
+    dependencies:
+      debug: registry.npmmirror.com/debug/3.1.0
+    dev: false
 
   registry.npmmirror.com/for-each/0.3.3:
     resolution: {integrity: sha512-jqYfLp7mo9vIyQf8ykW2v7A+2N4QjeCeI5+Dz9XraiO1ign81wjiH7Fb9vSOWvQfNtmSa4H2RoQTrrXivdUZmw==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/for-each/-/for-each-0.3.3.tgz}
@@ -13478,7 +13497,6 @@ packages:
     resolution: {integrity: sha512-Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/ms/-/ms-2.0.0.tgz}
     name: ms
     version: 2.0.0
-    dev: true
 
   registry.npmmirror.com/ms/2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/ms/-/ms-2.1.2.tgz}
@@ -18079,6 +18097,18 @@ packages:
       to-buffer: registry.npmmirror.com/to-buffer/1.1.1
       xtend: registry.npmmirror.com/xtend/4.0.2
     dev: true
+
+  registry.npmmirror.com/taro-axios/1.1.1_@tarojs+taro@3.5.12:
+    resolution: {integrity: sha512-Ahbxef5w6uy6wiJkooOxQbEeiqyE5vt/ikUe/bPDDhguZ7NjDSeGlNqvzLW+3lyT8ZFV+s5oqMI2EZ5c2Edwgg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/taro-axios/-/taro-axios-1.1.1.tgz}
+    id: registry.npmmirror.com/taro-axios/1.1.1
+    name: taro-axios
+    version: 1.1.1
+    peerDependencies:
+      '@tarojs/taro': ^3
+    dependencies:
+      '@tarojs/taro': registry.npmmirror.com/@tarojs/taro/3.5.12_vue@3.2.45
+      axios: registry.npmmirror.com/axios/0.19.2
+    dev: false
 
   registry.npmmirror.com/taro-css-to-react-native/3.5.12:
     resolution: {integrity: sha512-8iAtjtQO4a1Kikz8tZ2vx329OAa0F6EXbSyavuHrm1QWP14zcBtMrU0s+4bfFtsuWkng8hGr893D+YCILIIEpg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/taro-css-to-react-native/-/taro-css-to-react-native-3.5.12.tgz}
