@@ -2,7 +2,7 @@
 import mockjs from 'mockjs';
 
 export default {
-    'GET /api/tags': mockjs.mock({
+    'GET /api/tags': mockjs.Mock({
         'list|1-10': [
             {
                 // 属性 id 是一个自增数，起始值为 1，每次增 1
