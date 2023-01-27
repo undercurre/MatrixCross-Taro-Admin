@@ -1,5 +1,4 @@
 import {
-    defineConfig,
     presetAttributify,
     presetIcons,
     presetTypography,
@@ -101,5 +100,7 @@ export default {
         transformerAttributify(),
         // options https://github.com/MellowCo/unocss-preset-weapp/tree/main/src/transformer/transformerClass
         transformerClass(),
+        transformerDirectives(),
+        transformerVariantGroup(),
     ],
 };

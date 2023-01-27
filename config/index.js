@@ -1,5 +1,4 @@
 import UnoCSS from 'unocss/webpack';
-import TaroResolver from './module/TaroResolver';
 const AutoImport = require('unplugin-auto-import/webpack');
 const Components = require('unplugin-vue-components/webpack');
 
@@ -31,6 +30,13 @@ const config = {
             // https://github.com/antfu/unplugin-auto-import
             chain.plugin('unplugin-auto-import').use(
                 AutoImport({
+                    include: [
+                        // 扫描范围
+                        /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
+                        /\.vue$/,
+                        /\.vue\?vue/, // .vue
+                        /\.md$/, // .md
+                    ],
                     imports: [
                         'vue',
                         // 注意: 针对可能出现的 `$` 和 `$$`，手动排除
@@ -44,10 +50,9 @@ const config = {
                                 '$computed',
                             ],
                         },
-                        TaroResolver(),
                     ],
                     dts: 'src/auto-imports.d.ts',
-                    dirs: ['src/composables', 'src/store'],
+                    dirs: ['src/stores'],
                     vueTemplate: true,
                     eslintrc: {
                         enabled: true,
