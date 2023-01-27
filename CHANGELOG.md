@@ -1,8 +1,4 @@
-# Changelog
-
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
-
-## 1.1.0 (2023-01-27)
+# [1.1.0](https://github.com/undercurre/MatrixCross-Taro-Admin/compare/0c4ec710f923f128419c86e97693f83d79bd29e9...v1.1.0) (2023-01-27)
 
 ### Features
 
